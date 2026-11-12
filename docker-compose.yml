@@ -1,0 +1,17 @@
+# Banco PostgreSQL para desenvolvimento local.
+# Uso: docker compose up -d
+services:
+  db:
+    image: postgres:16
+    container_name: fitstart-db
+    environment:
+      POSTGRES_DB: fitstart
+      POSTGRES_USER: fitstart
+      POSTGRES_PASSWORD: fitstart
+    ports:
+      - "5432:5432"
+    volumes:
+      - fitstart-data:/var/lib/postgresql/data
+
+volumes:
+  fitstart-data:
